@@ -1,0 +1,18 @@
+# .NET
+bin/
+obj/
+*.pdb
+*.cache
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# Logs y temporales
+*.log
+logs/
