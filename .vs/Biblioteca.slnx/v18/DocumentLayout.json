@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|c:\\users\\devexavier\\desktop\\gym\\c#\\biblioteca\\biblioteca.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|solutionrelative:biblioteca.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|c:\\users\\devexavier\\desktop\\gym\\c#\\biblioteca\\ui\\menuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|solutionrelative:ui\\menuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|c:\\users\\devexavier\\desktop\\gym\\c#\\biblioteca\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|solutionrelative:models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|c:\\users\\devexavier\\desktop\\gym\\c#\\biblioteca\\services\\libroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|solutionrelative:services\\libroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|c:\\users\\devexavier\\desktop\\gym\\c#\\biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|c:\\users\\devexavier\\desktop\\gym\\c#\\biblioteca\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5089620-AE29-9280-F791-CEEB18E3F943}|Biblioteca.csproj|solutionrelative:models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,28 +50,40 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuUI.cs",
+              "DocumentMoniker": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\UI\\MenuUI.cs",
+              "RelativeDocumentMoniker": "UI\\MenuUI.cs",
+              "ToolTip": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\UI\\MenuUI.cs",
+              "RelativeToolTip": "UI\\MenuUI.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T16:42:18.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "LibroService.cs",
+              "DocumentMoniker": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\Services\\LibroService.cs",
+              "RelativeDocumentMoniker": "Services\\LibroService.cs",
+              "ToolTip": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\Services\\LibroService.cs",
+              "RelativeToolTip": "Services\\LibroService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T16:40:07.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Libro.cs",
               "DocumentMoniker": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\Models\\Libro.cs",
               "RelativeDocumentMoniker": "Models\\Libro.cs",
               "ToolTip": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\Models\\Libro.cs",
               "RelativeToolTip": "Models\\Libro.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA0AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAkwA0AAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-22T10:32:48.381Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Biblioteca.csproj",
-              "DocumentMoniker": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\Biblioteca.csproj",
-              "RelativeDocumentMoniker": "Biblioteca.csproj",
-              "ToolTip": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\Biblioteca.csproj",
-              "RelativeToolTip": "Biblioteca.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-07-21T14:03:49.48Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -77,7 +93,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\DevExavier\\Desktop\\GYM\\C#\\Biblioteca\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwAoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-21T13:56:38.208Z"
             }

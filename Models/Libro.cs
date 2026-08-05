@@ -1,17 +1,28 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace Biblioteca.Models
 {
     internal class Libro
     {
-        private string? Id { get; set; }
-        private string? Titulo { get; set; }
-        private string? Autor { get; set; }
-        private DateOnly FechaPublicacion { get; set; }
-        private bool Disponible { get; set; } = false; 
-        private int Ejemplares { get; set; }    
+        public string Id { get; private set; }
+        public string Titulo { get; private set; }
+        public string Autor { get; private set; }
+        public DateOnly FechaPublicacion { get; private  set; }
+        public bool Disponible { get; private set; } = true; 
+        public int Ejemplares { get; private set; }    
+
+        public Libro (string id, string titulo, string autor, DateOnly fechaPublicacion, int ejemplares )
+        {
+            this.Id = id;
+            this.Titulo = titulo;
+            this.Autor = autor;
+            this.FechaPublicacion = fechaPublicacion; 
+            this.Disponible = true;
+            this.Ejemplares = ejemplares;
+
+        }
     }
 }
+///*
+///"Inicializo las propiedades del objeto cuando se crea una instancia de la clase Libro mediante su constructor."
+/// */
