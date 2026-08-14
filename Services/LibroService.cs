@@ -7,22 +7,27 @@ namespace Biblioteca.Services
     {
         private int siguienteId = 1;
         private LibroRepository libroRepository = new LibroRepository();
-        public Libro RegistrarLibro( string titulo, string autor, DateOnly fechaPublicacion, int ejemplares) 
-        {    
-         string id = $"LIB{siguienteId:D3}";// Genera un ID único para el libro, con el formato "LIB" seguido de un número de tres dígitos.
-         siguienteId++;
-         Libro libro = new Libro(id,titulo, autor, fechaPublicacion, ejemplares );
-         libroRepository.Guardar(libro);
-         return libro;        
+        public Libro RegistrarLibro(string titulo, string autor, DateOnly fechaPublicacion, int ejemplares)
+        {
+
+            if (ejemplares <= 0)
+            {
+                throw new ArgumentException( "La cantidad de ejemplares debe ser mayor que cero.");
+            }
+            string id = $"LIB{siguienteId:D3}";// Genera un ID único para el libro, con el formato "LIB" seguido de un número de tres dígitos.
+            siguienteId++;
+            Libro libro = new Libro(id, titulo, autor, fechaPublicacion, ejemplares);
+            libroRepository.Guardar(libro);
+            return libro;
         }
-        
+
         public List<Libro> ObtenerTodos()
         {
-            
+
             return libroRepository.ObtenerTodosLibros();
         }
-    
-        
+
+
 
     }
 }
