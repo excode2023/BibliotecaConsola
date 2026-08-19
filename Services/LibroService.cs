@@ -1,4 +1,5 @@
-﻿using Biblioteca.Models;
+﻿using System.Globalization;
+using Biblioteca.Models;
 using Biblioteca.Repositories;
 
 namespace Biblioteca.Services
@@ -10,6 +11,11 @@ namespace Biblioteca.Services
         public Libro RegistrarLibro(string titulo, string autor, DateOnly fechaPublicacion, int ejemplares)
         {
 
+            if (string.IsNullOrWhiteSpace(titulo))
+            {
+                throw new ArgumentException("El título es obligatorio.");
+            }
+            
             if (ejemplares <= 0)
             {
                 throw new ArgumentException( "La cantidad de ejemplares debe ser mayor que cero.");
