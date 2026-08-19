@@ -23,8 +23,13 @@ namespace Biblioteca.Services
 
         public List<Libro> ObtenerTodos()
         {
+        return libroRepository.ObtenerTodosLibros();
+        }
 
-            return libroRepository.ObtenerTodosLibros();
+        public Libro? BuscarPorId(string id)
+        {
+         string idNormalizado = id.Trim().ToUpperInvariant();
+         return  libroRepository.BuscarPorId(idNormalizado);
         }
 
 
@@ -43,5 +48,6 @@ MenuUI
 │               │                   └── ...
 └───────────────┘
 "Creamos un campo llamado libroService, cuyo tipo es LibroService, y ese campo guarda una referencia a un objeto de esa clase."
-
+Trim() elimina espacios al principio y al final.
+ToUpperInvariant() transforma el texto a mayúsculas de forma consistente.
 */

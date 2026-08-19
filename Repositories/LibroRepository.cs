@@ -16,6 +16,20 @@ namespace Biblioteca.Repositories
             
             return libros;
         }
+
+        public Libro? BuscarPorId(string id)
+        {
+            foreach (Libro libro in libros)
+            {
+                if (libro.Id == id)
+                {
+                    return libro;
+                }
+            }
+            return null;
+
+            
+        } 
         
     }
 }
