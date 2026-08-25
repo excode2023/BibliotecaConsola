@@ -120,6 +120,7 @@ namespace Biblioteca.UI
             MostrarDatosLibro(libro);
             Console.WriteLine("-------------------------");
             Console.WriteLine();
+            
             Console.WriteLine("Presione una tecla para continuar...");
             Console.ReadKey();
 

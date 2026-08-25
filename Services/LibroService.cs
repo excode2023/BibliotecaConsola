@@ -26,19 +26,38 @@ namespace Biblioteca.Services
             libroRepository.Guardar(libro);
             return libro;
         }
-
         public List<Libro> ObtenerTodos()
         {
         return libroRepository.ObtenerTodosLibros();
         }
-
         public Libro? BuscarPorId(string id)
         {
          string idNormalizado = id.Trim().ToUpperInvariant();
          return  libroRepository.BuscarPorId(idNormalizado);
         }
-
-
+        public Libro EditarLibro( string id, string titulo, string autor, DateOnly fechaPublicacion, int ejemplares)
+        {
+            if (string.IsNullOrWhiteSpace(titulo))
+            {
+                throw new ArgumentException("El título es obligatorio.");
+            }
+             if (string.IsNullOrWhiteSpace(autor))
+             {
+                throw new ArgumentException("El autor es obligatorio.");
+             }
+             if (ejemplares <= 0)
+             {
+                throw new ArgumentException("La cantidad de ejemplares debe ser mayor que cero.");
+             }
+            
+            Libro? libro = libroRepository.BuscarPorId(id);
+            if (libro == null)
+            {
+                throw new ArgumentException( $"No se encontró ningún libro con el ID {id}.");
+            }
+            libro.ActualizarDatos( titulo, autor, fechaPublicacion, ejemplares);
+        return libro;
+        }
 
     }
 }
