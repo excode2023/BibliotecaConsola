@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using Biblioteca.Models;
+﻿using Biblioteca.Models;
 using Biblioteca.Repositories;
 
 namespace Biblioteca.Services
@@ -7,58 +6,97 @@ namespace Biblioteca.Services
     internal class LibroService
     {
         private int siguienteId = 1;
-        private LibroRepository libroRepository = new LibroRepository();
-        public Libro RegistrarLibro(string titulo, string autor, DateOnly fechaPublicacion, int ejemplares)
-        {
 
+        private readonly LibroRepository libroRepository =
+            new LibroRepository();
+
+        public Libro RegistrarLibro(
+            string titulo,
+            string autor,
+            DateOnly fechaPublicacion,
+            int ejemplares)
+        {
             if (string.IsNullOrWhiteSpace(titulo))
             {
-                throw new ArgumentException("El título es obligatorio.");
+                throw new ArgumentException(
+                    "El título es obligatorio.");
             }
-            
+
+            if (string.IsNullOrWhiteSpace(autor))
+            {
+                throw new ArgumentException(
+                    "El autor es obligatorio.");
+            }
+
             if (ejemplares <= 0)
             {
-                throw new ArgumentException( "La cantidad de ejemplares debe ser mayor que cero.");
+                throw new ArgumentException(
+                    "La cantidad de ejemplares debe ser mayor que cero.");
             }
-            string id = $"LIB{siguienteId:D3}";// Genera un ID único para el libro, con el formato "LIB" seguido de un número de tres dígitos.
+
+            string id = $"LIB{siguienteId:D3}";
             siguienteId++;
-            Libro libro = new Libro(id, titulo, autor, fechaPublicacion, ejemplares);
+
+            Libro libro = new Libro(
+                id,
+                titulo,
+                autor,
+                fechaPublicacion,
+                ejemplares);
+
             libroRepository.Guardar(libro);
+
             return libro;
         }
+
         public List<Libro> ObtenerTodos()
         {
-        return libroRepository.ObtenerTodosLibros();
+            return libroRepository.ObtenerTodosLibros();
         }
+
         public Libro? BuscarPorId(string id)
         {
-         string idNormalizado = id.Trim().ToUpperInvariant();
-         return  libroRepository.BuscarPorId(idNormalizado);
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return null;
+            }
+
+            string idNormalizado = id.Trim().ToUpperInvariant();
+
+            return libroRepository.BuscarPorId(idNormalizado);
         }
-        public Libro EditarLibro( string id, string titulo, string autor, DateOnly fechaPublicacion, int ejemplares)
+
+        public Libro EditarLibro(string id,string titulo,string autor,DateOnly fechaPublicacion,int ejemplares)
         {
             if (string.IsNullOrWhiteSpace(titulo))
             {
-                throw new ArgumentException("El título es obligatorio.");
+                throw new ArgumentException(
+                    "El título es obligatorio.");
             }
-             if (string.IsNullOrWhiteSpace(autor))
-             {
-                throw new ArgumentException("El autor es obligatorio.");
-             }
-             if (ejemplares <= 0)
-             {
-                throw new ArgumentException("La cantidad de ejemplares debe ser mayor que cero.");
-             }
-            
-            Libro? libro = libroRepository.BuscarPorId(id);
+
+            if (string.IsNullOrWhiteSpace(autor))
+            {
+                throw new ArgumentException(
+                    "El autor es obligatorio.");
+            }
+
+            if (ejemplares <= 0)
+            {
+                throw new ArgumentException(
+                    "La cantidad de ejemplares debe ser mayor que cero.");
+            }
+
+            // Reutilizamos BuscarPorId para normalizar el ID.
+            Libro? libro = BuscarPorId(id);
+
             if (libro == null)
             {
-                throw new ArgumentException( $"No se encontró ningún libro con el ID {id}.");
+                throw new ArgumentException($"No se encontró ningún libro con el ID {id}.");
             }
-            libro.ActualizarDatos( titulo, autor, fechaPublicacion, ejemplares);
-        return libro;
-        }
 
+            libro.ActualizarDatos(titulo,autor,fechaPublicacion,ejemplares);
+            return libro;
+        }
     }
 }
 //"El método devuelve un objeto de tipo Libro."

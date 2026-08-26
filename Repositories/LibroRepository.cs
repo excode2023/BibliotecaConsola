@@ -1,11 +1,11 @@
-﻿
-using Biblioteca.Models;
+﻿using Biblioteca.Models;
+
 namespace Biblioteca.Repositories
 {
     internal class LibroRepository
     {
-        
-       private List<Libro> libros = new List<Libro>();
+        private readonly List<Libro> libros = new List<Libro>();
+
         public void Guardar(Libro libro)
         {
             libros.Add(libro);
@@ -13,7 +13,6 @@ namespace Biblioteca.Repositories
 
         public List<Libro> ObtenerTodosLibros()
         {
-            
             return libros;
         }
 
@@ -26,10 +25,8 @@ namespace Biblioteca.Repositories
                     return libro;
                 }
             }
-            return null;
 
-            
-        } 
-        
+            return null;
+        }
     }
 }
