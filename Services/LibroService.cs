@@ -7,8 +7,7 @@ namespace Biblioteca.Services
     {
         private int siguienteId = 1;
 
-        private readonly LibroRepository libroRepository =
-            new LibroRepository();
+        private readonly LibroRepository libroRepository = new LibroRepository();
 
         public Libro RegistrarLibro(
             string titulo,
@@ -66,7 +65,7 @@ namespace Biblioteca.Services
             return libroRepository.BuscarPorId(idNormalizado);
         }
 
-        public Libro EditarLibro(string id,string titulo,string autor,DateOnly fechaPublicacion,int ejemplares)
+        public Libro EditarLibro(string id, string titulo, string autor, DateOnly fechaPublicacion, int ejemplares)
         {
             if (string.IsNullOrWhiteSpace(titulo))
             {
@@ -94,8 +93,26 @@ namespace Biblioteca.Services
                 throw new ArgumentException($"No se encontró ningún libro con el ID {id}.");
             }
 
-            libro.ActualizarDatos(titulo,autor,fechaPublicacion,ejemplares);
+            libro.ActualizarDatos(titulo, autor, fechaPublicacion, ejemplares);
             return libro;
+        }
+
+        public void EliminarLibro(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                throw new ArgumentException("El ID es obligatorio.");
+            }
+
+            string idNormalizado = id.Trim().ToUpperInvariant();
+
+            bool eliminado = libroRepository.EliminarPorId(idNormalizado);
+
+            if (!eliminado)
+            {
+                throw new ArgumentException($"No se encontró ningún libro con el ID {idNormalizado}.");
+            }
+
         }
     }
 }
@@ -113,4 +130,16 @@ MenuUI
 "Creamos un campo llamado libroService, cuyo tipo es LibroService, y ese campo guarda una referencia a un objeto de esa clase."
 Trim() elimina espacios al principio y al final.
 ToUpperInvariant() transforma el texto a mayúsculas de forma consistente.
+*/
+
+/*
+bool eliminado = libroRepository.EliminarPorid(idNormalizado);
+
+            if (!eliminado)
+            {
+                throw new ArgumentException($"No se encontró ningún libro con el ID {idNormalizado}.");
+            }
+//La variable eliminado recibe/
+// true: el repositorio encontró y eliminó el libro.
+false: no encontró ningún libro con ese ID.
 */

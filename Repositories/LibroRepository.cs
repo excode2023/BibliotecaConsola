@@ -28,5 +28,17 @@ namespace Biblioteca.Repositories
 
             return null;
         }
+
+        public bool EliminarPorId(string id)
+        {
+            Libro? libro = BuscarPorId(id);
+
+            if (libro == null)
+            {
+                return false;
+            }
+            libros.Remove(libro);
+            return true;
+        }
     }
 }

@@ -37,6 +37,9 @@ namespace Biblioteca.UI
                         case 4:
                             EditarLibro();
                             break;
+                        case 5:
+                            EliminarLibro();
+                            break;
 
                         case 0:
                             salir = true;
@@ -67,6 +70,7 @@ namespace Biblioteca.UI
             Console.WriteLine("2. Mostrar todos los libros");
             Console.WriteLine("3. Buscar libro por ID");
             Console.WriteLine("4. Editar libro");
+            Console.WriteLine("5. Eliminar libro");
             Console.WriteLine("0. Salir");
             Console.WriteLine();
 
@@ -284,6 +288,57 @@ namespace Biblioteca.UI
             }
 
             Console.WriteLine();
+            Console.WriteLine("Presione una tecla para continuar...");
+            Console.ReadKey();
+        }
+        private void EliminarLibro()
+        {
+            Console.WriteLine("Eliminar libro:");
+            Console.WriteLine("-------------------------");
+
+            Console.Write("Introduzca el código del libro a eliminar: ");
+            string? idEliminar = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(idEliminar))
+            {
+                Console.WriteLine("Debe introducir un código.");
+                Console.ReadKey();
+                return;
+            }
+
+            string idNormalizado =
+                idEliminar.Trim().ToUpperInvariant();
+
+            Libro? libro = libroService.BuscarPorId(idNormalizado);
+
+            if (libro == null)
+            {
+                Console.WriteLine("No se encontró el libro.");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Libro que será eliminado:");
+            MostrarDatosLibro(libro);
+
+            Console.WriteLine();
+            Console.Write("¿Confirma que desea eliminar el libro? (S/N): ");
+
+            string confirmacion =
+                (Console.ReadLine() ?? "").Trim().ToUpperInvariant();
+
+            if (confirmacion != "S")
+            {
+                Console.WriteLine("Eliminación cancelada.");
+                Console.ReadKey();
+                return;
+            }
+
+            libroService.EliminarLibro(idNormalizado);
+
+            Console.WriteLine();
+            Console.WriteLine("Libro eliminado correctamente.");
             Console.WriteLine("Presione una tecla para continuar...");
             Console.ReadKey();
         }
