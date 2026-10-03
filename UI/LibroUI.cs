@@ -163,12 +163,7 @@ namespace Biblioteca.UI
 
             Console.Write("Ingrese el nuevo autor: ");
             string nuevoAutor = Console.ReadLine() ?? "";
-
-            Console.Write("Ingrese el nuevo autor: ");
-            string nuevoEjemplar = Console.ReadLine() ?? "";
-
             int nuevosEjemplares;
-
             while (true)
             {
                 Console.Write("Ingrese la nueva cantidad de ejemplares: ");
